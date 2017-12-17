@@ -30,6 +30,7 @@ class TodoContainer extends Component {
 
     handleAdd() {
         const { addTodo, todo } = this.props
+        
         addTodo(todo.description)
     }
 
@@ -52,7 +53,7 @@ class TodoContainer extends Component {
                     keyHandler={this.keyHandler}
                     description={todo.description} />
 
-                <div className='text-center'>
+                <div className='text-center filter-link'>
                     <SortTodo label='Mais recentes' sortTodo={sortAsc} /> |
                     <SortTodo label='Mais antigas' sortTodo={sortDesc} />
                 </div>
@@ -77,7 +78,9 @@ class TodoContainer extends Component {
 
 
 const mapDispatchToProps = dispatch => bindActionCreators
-    ({ handleChange, addTodo, loadData, deleteTodo, markAsDone, markAsPending, 
-        showAll, showComplete, sortAsc, sortDesc }, dispatch)
+    ({
+        handleChange, addTodo, loadData, deleteTodo, markAsDone, markAsPending,
+        showAll, showComplete, sortAsc, sortDesc
+    }, dispatch)
 const mapStateToProps = state => ({ todo: state.todo })
 export default connect(mapStateToProps, mapDispatchToProps)(TodoContainer)

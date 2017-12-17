@@ -1,4 +1,5 @@
 import moment from 'moment'
+import { toastr } from 'react-redux-toastr'
 
 const loadLocalStorage = () => {
     const list = JSON.parse(localStorage.getItem('list')) || []
@@ -19,24 +20,27 @@ export const handleChange = (e) => {
 }
 
 export const addTodo = (description) => {
-    const loadData = loadLocalStorage()
 
-    const todo = { _id: Date.now(), description, date: moment().format(), done: false }
+    if (description !== '') {
+        const loadData = loadLocalStorage()
 
-    loadData.push(todo)
+        const todo = { _id: Date.now(), description, date: moment().format(), done: false }
 
-    addLocalStorage(loadData)
+        loadData.push(todo)
 
-    return [
-        {
+        addLocalStorage(loadData)
+
+        return [{
             type: 'ADD_TODO',
             payload: loadData
-        },
-        {
+        }, {
             type: 'HANDLE_CHANGE',
             payload: ''
-        }
-    ]
+        }, toastr.success('Sucesso!', 'Tarefa inserida com sucesso!')]
+    }
+
+    return toastr.error('Erro', 'O campo tarefa não pode ser nulo!')
+
 }
 
 export const deleteTodo = (todo_id) => {
@@ -48,10 +52,10 @@ export const deleteTodo = (todo_id) => {
     // adiciona o array filtrado no localstorage
     addLocalStorage(todoFiltered)
 
-    return {
+    return [{
         type: 'TODO_REMOVED',
         payload: todoFiltered
-    }
+    }, toastr.success('Sucesso!', 'Tarefa removida com sucesso!')]
 }
 
 export const markAsDone = (todo_index) => {
