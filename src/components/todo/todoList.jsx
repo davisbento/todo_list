@@ -10,10 +10,10 @@ const TodoList = ({ list, deleteTodo, markAsDone, markAsPending }) => {
                 <td>{moment(todo.date).format('LLL')}</td>
                 <td>
                     {todo.done ?
-                        <button className='todo-done' onClick={() => markAsPending(index)}>
+                        <button className='todo-done' onClick={() => markAsPending(todo._id)}>
                             <i className='fa fa-check'></i>
                         </button>
-                        : <button className='todo-not-done' onClick={() => markAsDone(index)}>
+                        : <button className='todo-not-done' onClick={() => markAsDone(todo._id)}>
                             <i className='fa fa-remove'></i>
                         </button>}
                 </td>

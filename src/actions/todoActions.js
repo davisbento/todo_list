@@ -21,7 +21,7 @@ export const handleChange = (e) => {
 
 export const addTodo = (description) => {
 
-    if (description !== '') {
+    if (description.trim().length > 0) {
         const loadData = loadLocalStorage()
 
         const todo = { _id: Date.now(), description, date: moment().format(), done: false }
@@ -68,16 +68,16 @@ export const deleteTodo = (todo_id) => {
     }
 }
 
-export const markAsDone = (todo_index) => {
-    const loadData = loadLocalStorage()
+export const markAsDone = (todo_id) => {
+    let loadData = loadLocalStorage()
 
-    const todo = loadData[todo_index]
-
-    loadData.splice(todo_index, 1)
-
-    todo.done = true
-
-    loadData.unshift(todo)
+    loadData.map(todo => {
+        if (todo._id == todo_id) {
+            todo.done = true
+            return todo
+        }
+        return todo
+    })
 
     addLocalStorage(loadData)
 
@@ -87,16 +87,16 @@ export const markAsDone = (todo_index) => {
     }
 }
 
-export const markAsPending = (todo_index) => {
-    const loadData = loadLocalStorage()
+export const markAsPending = (todo_id) => {
+    let loadData = loadLocalStorage()
 
-    const todo = loadData[todo_index]
-
-    loadData.splice(todo_index, 1)
-
-    todo.done = false
-
-    loadData.unshift(todo)
+    loadData.map(todo => {
+        if (todo._id == todo_id) {
+            todo.done = false
+            return todo
+        }
+        return todo
+    })
 
     addLocalStorage(loadData)
 
