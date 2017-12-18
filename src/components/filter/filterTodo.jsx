@@ -8,8 +8,10 @@ const FilterTodo = ({ filterTodo, filterLabel }) => {
     }
 
     return (
-        <a href='' onClick={filterAction}>
-            {filterLabel}
+        <a href='' onClick={filterAction} id='filter_link'>
+            <label>
+                {filterLabel}
+            </label>
         </a>
     )
 }

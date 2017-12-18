@@ -6,7 +6,7 @@ const TodoList = ({ list, deleteTodo, markAsDone, markAsPending }) => {
     const renderRows = () => {
         return list.map((todo, index) => {
             return <tr key={todo._id}>
-                <td>{todo.description}</td>
+                <td className='description'>{todo.description}</td>
                 <td>{moment(todo.date).format('LLL')}</td>
                 <td>
                     {todo.done ?

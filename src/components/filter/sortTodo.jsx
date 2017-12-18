@@ -8,8 +8,10 @@ const SortTodo = ({ sortTodo, label }) => {
     }
 
     return (
-        <a href='' onClick={sortAction}>
-            {label}
+        <a href='' onClick={sortAction} id='sort_link'>
+            <label>
+                {label}
+            </label>
         </a>
     )
 }
