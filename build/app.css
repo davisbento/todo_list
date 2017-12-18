@@ -2747,7 +2747,6 @@ body {
   font-family: Trebuchet MS, Arial, Helvetica, sans-serif; }
 
 .empty-list {
-  background-color: #f2dede;
   border-color: #ebccd1;
   font-size: 18px;
   padding: 30px 10px;
@@ -2757,7 +2756,7 @@ body {
 
 .filter-link a {
   text-decoration: none;
-  color: #ccc; }
+  color: #f4a460; }
 
 .filter-link label {
   cursor: pointer; }
