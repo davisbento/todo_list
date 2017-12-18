@@ -10,7 +10,7 @@ const cssDev = ExtractTextPlugin.extract({
 const cssProd = ExtractTextPlugin.extract({
     fallback: 'style-loader',
     use: ['css-loader', 'sass-loader'],
-    publicPath: '/public'
+    publicPath: '/build'
 })
 
 const cssConfig = isProd ? cssProd : cssDev
