@@ -3,7 +3,6 @@ import React from 'react'
 const TodoForm = ({ handleChange, handleAdd, description, keyHandler }) => {
     return (
         <div className='form-add'>
-            <h2>ADICIONAR TAREFA</h2>
             <input type='text'
                 className='input-primary'
                 onChange={handleChange}

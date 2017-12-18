@@ -141,8 +141,8 @@ export const showComplete = () => {
     }
 }
 
-export const sortAsc = () => {
-    const loadData = loadLocalStorage()
+export const sortAsc = (list) => {
+    const data = list
 
     function orderAsc(a, b) {
         if (a._id < b._id)
@@ -152,7 +152,7 @@ export const sortAsc = () => {
         return 0;
     }
 
-    const todoSort = loadData.sort(orderAsc)
+    const todoSort = data.sort(orderAsc)
 
     return {
         type: 'ORDER_ASC',
@@ -160,8 +160,8 @@ export const sortAsc = () => {
     }
 }
 
-export const sortDesc = () => {
-    const loadData = loadLocalStorage()
+export const sortDesc = (list) => {
+    const data = list
 
     function orderDesc(a, b) {
         if (a._id > b._id)
@@ -171,7 +171,7 @@ export const sortDesc = () => {
         return 0;
     }
 
-    const todoSort = loadData.sort(orderDesc)
+    const todoSort = data.sort(orderDesc)
 
     return {
         type: 'ORDER_DESC',

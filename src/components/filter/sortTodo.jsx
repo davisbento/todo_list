@@ -1,10 +1,10 @@
 import React from 'react'
 
-const SortTodo = ({ sortTodo, label }) => {
+const SortTodo = ({ sortTodo, label, list }) => {
 
     const sortAction = (e) => {
         e.preventDefault()
-        sortTodo()
+        sortTodo(list)
     }
 
     return (

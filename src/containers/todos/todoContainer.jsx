@@ -30,7 +30,7 @@ class TodoContainer extends Component {
 
     handleAdd() {
         const { addTodo, todo } = this.props
-        
+
         addTodo(todo.description)
     }
 
@@ -40,13 +40,15 @@ class TodoContainer extends Component {
     }
 
     render() {
-        const { handleChange, todo, deleteTodo,
+        const {
+            handleChange, todo, deleteTodo,
             markAsDone, markAsPending,
             showComplete, showAll,
-            sortAsc, sortDesc } = this.props
+            sortAsc, sortDesc
+        } = this.props
         return (
             <div className='container'>
-                <h1 className='text-center'>Todo List APP</h1>
+                <h1 className='text-center'>Todo List</h1>
                 <TodoForm
                     handleChange={handleChange}
                     handleAdd={this.handleAdd}
@@ -54,8 +56,10 @@ class TodoContainer extends Component {
                     description={todo.description} />
 
                 <div className='text-center filter-link'>
-                    <SortTodo label='Mais recentes' sortTodo={sortAsc} /> |
-                    <SortTodo label='Mais antigas' sortTodo={sortDesc} />
+                    Ordenar: <SortTodo label='Mais recentes'
+                        sortTodo={sortAsc} list={todo.list} /> |
+                    <SortTodo label='Mais antigas'
+                        sortTodo={sortDesc} list={todo.list} />
                 </div>
 
                 <TodoList
@@ -66,8 +70,7 @@ class TodoContainer extends Component {
                 />
 
                 <div className='filter-link'>
-                    Mostar:
-                    <FilterTodo filterTodo={showAll} filterLabel='Todos' /> |
+                    Mostar: <FilterTodo filterTodo={showAll} filterLabel='Todos' /> |
                     <FilterTodo filterTodo={showComplete} filterLabel='Completos' />
                 </div>
 
