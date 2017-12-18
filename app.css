@@ -2756,4 +2756,7 @@ body {
   text-decoration: none;
   color: #ccc; }
 
+.filter-link label {
+  cursor: pointer; }
+
 /*# sourceMappingURL=app.css.map*/
