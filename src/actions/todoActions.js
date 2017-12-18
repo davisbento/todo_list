@@ -30,16 +30,23 @@ export const addTodo = (description) => {
 
         addLocalStorage(loadData)
 
-        return [{
-            type: 'ADD_TODO',
-            payload: loadData
-        }, {
-            type: 'HANDLE_CHANGE',
-            payload: ''
-        }, toastr.success('Sucesso!', 'Tarefa inserida com sucesso!')]
+        return dispatch => {
+            toastr.success('Sucesso!', 'Tarefa inserida com sucesso!')
+            dispatch([
+                {
+                    type: 'ADD_TODO',
+                    payload: loadData
+                }, {
+                    type: 'HANDLE_CHANGE',
+                    payload: ''
+                }
+            ])
+        }
     }
 
-    return toastr.error('Erro', 'O campo tarefa não pode ser nulo!')
+    return dispatch => {
+        toastr.error('Erro', 'O campo tarefa não pode ser nulo!')
+    }
 
 }
 
@@ -52,10 +59,13 @@ export const deleteTodo = (todo_id) => {
     // adiciona o array filtrado no localstorage
     addLocalStorage(todoFiltered)
 
-    return [{
-        type: 'TODO_REMOVED',
-        payload: todoFiltered
-    }, toastr.success('Sucesso!', 'Tarefa removida com sucesso!')]
+    return dispatch => {
+        toastr.success('Sucesso!', 'Tarefa removida com sucesso!')
+        dispatch({
+            type: 'TODO_REMOVED',
+            payload: todoFiltered
+        })
+    }
 }
 
 export const markAsDone = (todo_index) => {

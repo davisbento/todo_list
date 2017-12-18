@@ -7,9 +7,10 @@ import { applyMiddleware, createStore } from 'redux'
 import { Provider } from 'react-redux'
 
 import multi from 'redux-multi'
+import thunk from 'redux-thunk'
 
 const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-const store = applyMiddleware(multi)(createStore)(reducers, devTools)
+const store = applyMiddleware(multi, thunk)(createStore)(reducers, devTools)
 
 ReactDOM.render(
     <Provider store={store}>
