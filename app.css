@@ -2714,7 +2714,7 @@ body {
   color: #fff;
   font-size: 15px;
   cursor: pointer;
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; }
+  font-family: Trebuchet MS, Arial, Helvetica, sans-serif; }
 
 .button-success {
   border: none;
@@ -2724,7 +2724,7 @@ body {
   color: #fff;
   font-size: 15px;
   cursor: pointer;
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; }
+  font-family: Trebuchet MS, Arial, Helvetica, sans-serif; }
 
 .todo-done {
   border: 5px;
@@ -2733,7 +2733,7 @@ body {
   padding: 7px 10px;
   color: #fff;
   cursor: pointer;
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; }
+  font-family: Trebuchet MS, Arial, Helvetica, sans-serif; }
 
 .todo-not-done {
   border: 5px;
@@ -2742,15 +2742,16 @@ body {
   padding: 7px 10px;
   color: #fff;
   cursor: pointer;
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; }
+  font-family: Trebuchet MS, Arial, Helvetica, sans-serif; }
 
 .empty-list {
-  background-color: #ff0f0f;
+  background-color: #f2dede;
+  border-color: #ebccd1;
   font-size: 18px;
   padding: 30px 10px;
   margin: 50px 150px;
   border-radius: 5px;
-  color: #fff; }
+  color: #a94442; }
 
 .filter-link a {
   text-decoration: none;
