@@ -10,3 +10,4 @@
 2. Redux
 3. Webpack
 4. Jest/Enzyme
+5. SASS loader
