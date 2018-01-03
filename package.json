@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack-dev-server --open --hot --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "test": "jest"
+    "test": "jest --watch --verbose"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +23,7 @@
     "font-awesome": "^4.7.0",
     "moment": "^2.19.4",
     "node-sass": "^4.7.2",
+    "prop-types": "^15.6.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^4.4.6",
@@ -45,6 +46,7 @@
     "file-loader": "^1.1.6",
     "jest": "^21.2.1",
     "react-addons-test-utils": "^15.6.2",
-    "react-test-renderer": "^15.6.1"
+    "react-test-renderer": "15.5.4",
+    "redux-mock-store": "^1.4.0"
   }
 }
