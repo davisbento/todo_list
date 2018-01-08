@@ -1,3 +1,5 @@
+# Live App: https://davisbento.github.io/todo_list/
+
 # APP - lista de tarefas
 1. Adicionar/Remover tarefa
 2. Marcar como "completo"
